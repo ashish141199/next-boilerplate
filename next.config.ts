@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
               default-src 'self' http://localhost:3000;
               script-src 'self' 'unsafe-inline';
               style-src 'self' 'unsafe-inline';
-              frame-ancestors 'self' https://your-main-domain.com;
+              frame-ancestors 'self' http://localhost:3000;
             `.replace(/\n/g, " ")
           }
         ]
