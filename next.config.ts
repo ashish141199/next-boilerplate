@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         source: "/(.*)",
         headers: [
           {
+            key: "X-Frame-Options",
+            value: "ALLOWALL" // Allows embedding from any domain
+          },
+          {
             key: "Content-Security-Policy",
             value: `
               default-src 'self' http://localhost:3000;
