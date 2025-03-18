@@ -14,10 +14,15 @@ const nextConfig: NextConfig = {
           {
             key: "Content-Security-Policy",
             value: `
-              default-src 'self' http://localhost:3000;
-              script-src 'self' 'unsafe-inline';
-              style-src 'self' 'unsafe-inline';
-              frame-ancestors 'self' http://localhost:3000;
+              default-src * data: blob: 'unsafe-inline' 'unsafe-eval';
+              script-src * data: blob: 'unsafe-inline' 'unsafe-eval';
+              style-src * data: blob: 'unsafe-inline';
+              img-src * data: blob:;
+              font-src * data: blob:;
+              frame-ancestors *;
+              connect-src * data: blob:;
+              media-src * data: blob:;
+              object-src *;
             `.replace(/\n/g, " ")
           }
         ]
